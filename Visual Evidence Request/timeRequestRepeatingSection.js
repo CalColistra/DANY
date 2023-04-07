@@ -21,7 +21,6 @@ NWF$().ready(function () {
 
 function calcDiff() {
   var difference = 0;
-  var testString = "";
   NWF$(".requestTimeRepeatingSection .nf-repeater-row:not('.nf-repeater-row-hidden')").each(function () {
     var row = NWF$(this);
     var dvrStartHr = row.find(".dvrStartHr input").val();
@@ -41,7 +40,7 @@ function calcDiff() {
     if ( (isNaN(dvrStartHr)) || (isNaN(dvrStartMin)) ||(isNaN(dvrStartSec)) ||
        (isNaN(dvrEndHr)) ||(isNaN(dvrEndMin)) ||(isNaN(dvrEndSec)) ) {
       alert("You must only enter numbers in DVR Times.");
-      NWF$('#'+totalDuration).val("You must only enter numbers in DVR Times.");
+      difference = "You must only enter numbers in DVR Times.";
     }
     else {
       hrDif = dvrEndHr - dvrStartHr;
@@ -53,8 +52,8 @@ function calcDiff() {
       secDif = secDiff/3600;
       // calc difference in hours:
       difference = hrDif + minDif + secDif;
-      NWF$('#'+totalDuration).val(difference)
     }
-    
+    console.log(difference);
+    NWF$('#'+totalDuration).val(difference);
   });
 }
