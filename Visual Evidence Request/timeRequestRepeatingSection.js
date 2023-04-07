@@ -1,26 +1,31 @@
 NWF$().ready(function () {
+  alert("hello");
+  /*
   NWF$('.dvrStartHr').change(function() {
-      calcDiff();
+    calcDiff();
   });
   NWF$('.dvrStartMin').change(function() {
-      calcDiff();
+    calcDiff();
   });
   NWF$('.dvrStartSec').change(function() {
-      calcDiff();
+    calcDiff();
   });
   NWF$('.dvrEndHr').change(function() {
-      calcDiff();
+    calcDiff();
   });
   NWF$('.dvrEndMin').change(function() {
-      calcDiff();
+    calcDiff();
   });
   NWF$('.dvrEndSec').change(function() {
-      calcDiff();
+    calcDiff();
   });
+  */
 });
+
 
 function calcDiff() {
   var difference = 0;
+
   NWF$(".requestTimeRepeatingSection .nf-repeater-row:not('.nf-repeater-row-hidden')").each(function () {
     var row = NWF$(this);
     var dvrStartHr = row.find(".dvrStartHr input").val();
@@ -43,9 +48,9 @@ function calcDiff() {
       difference = "You must only enter numbers in DVR Times.";
     }
     else {
-      hrDif = dvrEndHr - dvrStartHr;
-      minDif = dvrEndMin - dvrStartMin;
-      secDif = dvrEndSec - dvrStartSec;
+      var hrDif = dvrEndHr - dvrStartHr;
+      var minDif = dvrEndMin - dvrStartMin;
+      var secDif = dvrEndSec - dvrStartSec;
       //convert min to hour:
       minDif = minDif/60;
       //convert sec to hour:
@@ -53,7 +58,9 @@ function calcDiff() {
       // calc difference in hours:
       difference = hrDif + minDif + secDif;
     }
-    console.log(difference);
-    NWF$('#'+totalDuration).val(difference);
   });
+
+  console.log(difference);
+  difference = String(difference);
+  NWF$('#'+totalDuration).val(difference);
 }
