@@ -53,8 +53,9 @@ function calcDiff() {
             dvrEndSec = parseFloat(dvrEndSec);
 
 
-            //NOTE: need to subtract minutes and seconds according to which is 
+            //TODO: need to subtract minutes and seconds according to which is 
             // greater than other & in what hour/minute they occur in*****
+            //THOUGHT:  Maybe convert all times to seconds and add them before subtracting?
             if (dvrStartMin < dvrEndMin) {
                 var minDif = dvrEndMin - dvrStartMin;
             }
