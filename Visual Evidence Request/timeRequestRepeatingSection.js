@@ -1,3 +1,4 @@
+
 NWF$().ready(function () {
   alert("hello");
   NWF$('.dvrStartHr').change(function() {
@@ -68,9 +69,15 @@ async function calcDiff() {
 
       difference = endMinValue - startMinValue;
       difference = difference.toFixed(2);
-      
     }
+    
     difference = String(difference);
+    /*
+    var thisRowDiff = NWF$(this).find('.dvrDifference');
+    console.log(thisRowDiff);
+    
+    thisRowDiff.val(difference);
+    */
     NWF$('#'+totalDuration).val(difference);
   })
 }
