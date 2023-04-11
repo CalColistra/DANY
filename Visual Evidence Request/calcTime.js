@@ -1,5 +1,5 @@
 NWF$().ready(function () {
-    console.log("NEW INSTANCE");
+    console.log("NEW FORM INSTANCE");
     NWF$('.dvrDifferences').change(function() {
         calcDiff();
         });
@@ -10,7 +10,6 @@ NWF$().ready(function () {
 
 async function calcDiff() {
     var dvrVals = NWF$(".dvrDifferences input").val();
-    console.log("dvr values (STRING): "+dvrVals);
     var dvrValsArr = [];
     var dvrValsLen = dvrVals.length;
     if (dvrValsLen > 2){
@@ -23,9 +22,7 @@ async function calcDiff() {
                 currentChar = dvrVals[i];
             }
             if ((currentNum != ',') && (currentNum != ']')&&(currentNum != '')&&(currentNum != undefined)) {
-                console.log("pushing DVR: "+currentNum);
                 currentNum = parseFloat(currentNum);
-                
                 dvrValsArr.push(currentNum.toFixed(2));
             }
         }
@@ -33,34 +30,27 @@ async function calcDiff() {
     
    
     var realTimeVals = NWF$(".realTimeDifferences input").val();
-    console.log("realTime values (STRING): "+realTimeVals);
-/*
+    
     var realTimeValsArr = [];
     var realTimeValsLen = realTimeVals.length;
 
-    if (realTimeValsLen > 2){
-        for (let i = 1; i < realTimeValsLen; i++) {
+    if (realTimeValsLen > 2) {
+        for (let i = 1; i < realTimeValsLen; i++ ) {
             var currentNum = '';
-            var currentChar = realTimeValsArr[i];
-            console.log(currentChar);
-            while ((currentChar != ',') && (currentChar != ']') && (i < realTimeValsLen)) {
-                currentNum = currentNum + realTimeValsArr[i];
+            var currentChar = realTimeVals[i];
+            while ((currentChar != ',') && (currentChar != ']') && (typeof currentChar != undefined)&&(i<realTimeValsLen)&&(currentChar!=NaN)){
+                currentNum = currentNum + realTimeVals[i];
                 i = i + 1;
-                currentChar = realTimeValsArr[i];
+                currentChar = realTimeVals[i];
             }
-            if ((currentNum != ',') && (currentNum != ']')&&(currentNum != '')&&(currentNum != undefined)) {
-                console.log("pushing RealTime: "+currentNum);
-                currentNum = parseFloat(currentNum);
-                
-                realTimeValsArr.push(currentNum.toFixed(2));
+            if ((currentNum!=NaN) && (typeof currentNum != NaN)&&(currentNum!='')){
+                realTimeValsArr.push(parseFloat(currentNum));
             }
-            
         }
     }
+    
+  
 
-    console.log("realTimeArr: ");
-    console.log(realTimeValsArr);
-*/
     
     var finalArr = [];
     if (dvrValsArr.length > 0) {
@@ -68,16 +58,13 @@ async function calcDiff() {
             finalArr.push(parseFloat(dvrValsArr[i]));
         }
     }
-    console.log("DVRArr: ");
-    console.log(dvrValsArr);
-    console.log(typeof(finalArr[0]));
-/*
+
     if (realTimeValsArr.length > 0) {
         for (let i = 0; i < realTimeValsArr.length; i++) {
-            finalArr.push(realTimeValsArr[i]);
+            finalArr.push(parseFloat(realTimeValsArr[i]));
         }
     }
-*/
+
     var totalDiff = 0;
     if (finalArr.length > 0) {
         for (let i = 0; i < finalArr.length; i++) {
