@@ -9,6 +9,7 @@ NWF$().ready(function () {
   });
 
 async function calcDiff() {
+
     var dvrVals = NWF$(".dvrDifferences input").val();
     var dvrValsArr = [];
     var dvrValsLen = dvrVals.length;
@@ -28,9 +29,7 @@ async function calcDiff() {
         }
     }
     
-   
     var realTimeVals = NWF$(".realTimeDifferences input").val();
-    
     var realTimeValsArr = [];
     var realTimeValsLen = realTimeVals.length;
 
