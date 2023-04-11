@@ -48,9 +48,6 @@ async function calcDiff() {
         }
     }
     
-  
-
-    
     var finalArr = [];
     if (dvrValsArr.length > 0) {
         for (let i = 0; i < dvrValsArr.length; i++) {
