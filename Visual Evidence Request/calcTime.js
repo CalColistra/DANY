@@ -68,5 +68,5 @@ async function calcDiff() {
         }
     }
    var showDiff = NWF$('#'+totalDuration);
-   showDiff.val(totalDiff);
+   showDiff.val(totalDiff).trigger("blur");
 }
