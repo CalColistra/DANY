@@ -1,0 +1,23 @@
+
+NWF$().ready(function () {
+    var requesterTitle = NWF$("#"+ctl_requesterTitle);
+    var titleVal = requesterTitle.val();
+    updateFields(titleVal);
+  NWF$('.ctl_requesterTitle').change(function() {
+    console.log('changed');
+    var requesterTitle = NWF$("#"+ctl_requesterTitle);
+    var titleVal = requesterTitle.val();
+    updateFields(titleVal);
+    });
+});
+async function updateFields(titleVal) {
+    console.log(titleVal);
+    if (titleVal.includes("ADA")) {
+        var theRequestor = NWF$('#'+requester);
+        console.log(theRequestor.val());
+        NWF$('#'+adaName).val(theRequestor.val()).trigger("blur");
+    }
+    else {
+        NWF$('#'+adaName).val('').trigger("blur");
+    }
+}
