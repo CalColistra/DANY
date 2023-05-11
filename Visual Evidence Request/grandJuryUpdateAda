@@ -9,15 +9,15 @@ NWF$().ready(function () {
     var titleVal = requesterTitle.val();
     updateFields(titleVal);
     });
+    NWF$('.ctl_btn_changeAda').change(function() {
+        var emptyString = "";
+        NWF$('#'+adaName).val(emptyString).trigger("blur");
+    });
 });
 async function updateFields(titleVal) {
     console.log(titleVal);
     if (titleVal.includes("ADA")) {
         var theRequestor = NWF$('#'+requester);
-        console.log(theRequestor.val());
         NWF$('#'+adaName).val(theRequestor.val()).trigger("blur");
-    }
-    else {
-        NWF$('#'+adaName).val('').trigger("blur");
     }
 }
