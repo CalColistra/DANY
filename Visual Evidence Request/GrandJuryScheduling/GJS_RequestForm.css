@@ -1,0 +1,116 @@
+/* Template styles *//* Banner/Logo at top of form */
+.Nintex-Forms-banner
+{
+ background: no-repeat fixed left top;
+}.nf-form-input .nf-filler-control-inner, .nf-form-label .nf-filler-control-inner
+{
+top: 10px;
+bottom: 10px;
+left: 10px;
+right: 10px;
+}
+.nf-form-input .nf-textbox-wrapper
+{
+left: 0px;
+right: 0px;
+}/* Label styling for desktop layout */
+.nf-form-label
+{
+    display: block;
+    text-align: right;
+}
+.nf-form-label label
+{
+padding-top: 1px;
+}
+/* Button styling */
+.nf-button input
+{
+font-size: 14px;
+}.nf-section
+{
+border-top: 1px solid #d4dbe0;
+margin-top: -1px;
+}
+.nf-section-bottom
+{
+border-top: 1px solid #d4dbe0;
+margin-top: -2px;
+}
+.nf-item
+{
+}
+.nf-item-alternating
+{
+background-color: white;
+}
+/* Mobile styles */
+.nf-mobile-form
+{
+background-color: inherit;
+}
+.nf-mobile-form .nf-form-input .nf-filler-control-inner
+{
+top: 4px;
+bottom: 10px;
+left: 10px;
+right: 10px;
+}
+.nf-mobile-form .nf-form-label .nf-filler-control-inner
+{
+top: 5px;
+bottom: 1px;
+left: 10px;
+right: 10px;}/* Label styling for mobile layouts */
+.nf-mobile-form .nf-form-label
+{
+ text-align: left;
+ 
+}.nf-mobile-form .nf-form-input
+{
+border-top: 0px solid transparent;
+}/* Out of Dialog styles */
+.nf-non-dialog-outer
+{
+padding: 20px 0px;
+}.nf-non-dialog-outer .nf-filler-wrapper-outer
+{
+margin: 0px auto;
+position: relative;
+background-color: transparent;
+}.nf-non-dialog-outer .nf-filler-wrapper
+{
+background-color: white;
+position: relative;
+top: -5px;
+left: -5px;
+}/* IE 8 designer fix */
+.nf-mobile-form #uiDesignerSurface .nf-section
+{
+border-top: inherit;
+margin-top: inherit;
+}
+.nf-mobile-form #uiDesignerSurface .nf-section-bottom
+{
+border-bottom: inherit;
+margin-bottom: inherit;
+}
+/* Workflow designer override for Nintex Workflow styling */
+#uiDesignerSurface input[type=text], #uiDesignerSurface input[type=password], #uiDesignerSurface .ms-inputBox, #uiDesignerSurface  select, #uiDesignerSurface  textarea, #uiDesignerSurface .ms-inputBoxActive, #uiDesignerSurface .ms-inputBoxActive.ms-inputBox, #uiDesignerSurface button, #uiDesignerSurface .sp-peoplepicker-topLevel, #uiDesignerSurface .sp-peoplepicker-topLevelDisabled, #uiDesignerSurface .sp-peoplepicker-autoFillContainer
+{
+background-color: rgb(253, 253, 253) !important;
+}
+@media print
+{
+input[type=checkbox], input[type=radio], label
+{
+vertical-align:baseline;
+margin:0px 2px 1px 2px !Important;
+}
+} /* print pdf IE fix */
+@import url('https://fonts.cdnfonts.com/css/modern-no-20');
+.heading1{font-family: 'Modern No. 20'; font-weight: bold; font-size:34px;}
+.heading2{font-family: "Segoe UI"; font-weight: bold; font-size:16px;}
+.label{font-family: "Segoe UI"; font-weight: bold; font-size:12px;}
+.fields{font-family: "Segoe UI"; font-weight: normal; font-size:12px;}
+.ctl_requesterTitle{color:transparent;}.ctl_requesterPreferredName{color:transparent;} 
