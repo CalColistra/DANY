@@ -22,7 +22,6 @@ NWF$().ready(function () {
         selections = selections.val();
         checkSelection(timeSlot3, 3, selections);
     });
-
     NWF$('.ctl_clc_date4Selections').change(function() {
         var timeSlot4 = NWF$("#"+ctl_clc_date4TimeSlot);
         timeSlot4 = timeSlot4.val();
@@ -38,7 +37,7 @@ async function checkSelection(timeSlot, date, selections) {
     }
     else {
         var selectionCount = 0;
-        for (let i = 0; i < selections.length; i++) {
+        for (let i = 1; i < selections.length; i++) {
             var currentChar = selections.charAt(i);
             if (currentChar == ";") selectionCount = selectionCount+1;
         }
@@ -60,6 +59,8 @@ async function checkSelection(timeSlot, date, selections) {
             var txtBoxFilled = NWF$('#'+ctl_txt_timeSlot4Filled);
             txtBoxFilled.val(timeSlotFilledResult).trigger("blur");
         }
+        var allIdsBox = NWF$('#'+ctl_txt_allSelectedIds); 
+        allIdsBox.val();
     }
     
 }
